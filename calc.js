@@ -1,6 +1,7 @@
 // DOM is loaded and ready
 document.addEventListener("DOMContentLoaded", function (event) {
 
+    // boolean to control while loop
     let yesNo = true;
 
     // Welcome user to the calculator
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Instructions on how to use the calculator generate
     document.getElementById("instructions").innerHTML = "Please enter two comma-separated numbers, then click the button to calculate: ";
 
+    // loop will run until the return value of calc() is false
     while (yesNo === true) {
         yesNo = calc();
 
@@ -57,8 +59,8 @@ async function calc() {
             return parseInt(num);
         });
         console.log(numsArr);
-        numSum = addNums(numsArr);
-        yesNo = askAgain(showRes(numSum));
+        numSum = addNums(numsArr); // add all the numbers in our array
+        yesNo = askAgain(showRes(numSum)); // show result, and ask if user would like to try again
 
     });
 
@@ -67,7 +69,7 @@ async function calc() {
 }
 
 function showRes(num) {
-
+// Conditional: if the sum is greater than 10, we say that it is a big num, if less than, small num, if equal, equal
     let showResult = document.createElement("P");
     if (num > 10) {
         showResult.innerText = "The sum of your numbers is: " + num + ". That is a large number!";
@@ -88,6 +90,7 @@ function showRes(num) {
 }
 
 function askAgain(cont) {
+    // ask the user if they want to play again
     let yesNo = true;
 
     if (cont == true) {
@@ -101,13 +104,13 @@ function askAgain(cont) {
         let noBtn = document.createElement("button");
         noBtn.innerText = "No";
         document.body.appendChild(noBtn);
-        yesBtn.addEventListener("click", function () {
+        yesBtn.addEventListener("click", function () { // clicking on the yes button will tell the loop to go again
             yesNo = true;
             let newTry = document.createElement("P");
             newTry.innerText = "Enter two more numbers!";
             document.body.appendChild(newTry);
         });
-        noBtn.addEventListener("click", function () {
+        noBtn.addEventListener("click", function () { // clicking  on the no button will stop the program
             yesNo = false;
             let stop = document.createElement("P");
             stop.innerText = "Thank you for using the JavaScript calculator.";
