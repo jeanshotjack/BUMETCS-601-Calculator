@@ -1,0 +1,30 @@
+body {
+    margin: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    color: greenyellow;
+    background-color: black;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: greenyellow;
+}
+
+button {
+    color: black;
+    background-color: greenyellow;
+    border-color: green;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+}
+
+input {
+    background-color: black;
+    border-color: greenyellow;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
